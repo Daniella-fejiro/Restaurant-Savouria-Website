@@ -1,0 +1,709 @@
+ body{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow-x: hidden;
+       background-color: #d2b48c;
+       font-family: sans-serif;
+ }
+ .container{
+   background-color: #d2b48c;
+   width: 100%;
+   overflow-x: hidden;
+ }
+ header{
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(114, 53, 10);
+    margin-bottom: 1.4rem;
+    position: relative;
+    z-index: 1000;
+ }
+ #logo{
+    font-weight: bolder;
+    font-size: 2rem;
+    color: whitesmoke;
+    margin-left: 3rem;
+ }
+ nav{
+    display: flex;
+    gap: 4rem;
+    margin-right: 3rem;
+    z-index: 999;
+ }
+ nav a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    transition: .4s ease;
+    padding: 10px;
+ }
+ nav a:hover{
+   background-color: rgba(236, 215, 144, 0.5);
+   border-radius: 5px;
+ }
+ #hamburger{
+    display: none;
+ }
+ #hero{
+    margin: 1.5rem;
+    margin-top: 10rem;
+    padding-top:7rem;
+    height: 85vh;
+    background: linear-gradient(to bottom, 
+                              rgba(0, 0, 0, 0.7),
+                              rgba(1, 1, 1)),
+    url("Rice.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    align-items: flex-start;
+    border-radius: 10px;
+    justify-content: center;
+    padding-left: 4rem;
+ }
+ #hero h1{
+   font-size: 4rem;
+   font-family: Arial, Helvetica, sans-serif;
+   font-style: italic;
+   margin-bottom: 10px;
+   animation: fadedown  1s ease forwards;
+}
+#hero p {
+   margin: 0;
+   padding-bottom: 1rem;
+   font-size: 1.4rem;
+   font-weight: bold;
+   font-family: sans-serif;
+   animation: slideleft 1s ease forwards;
+}
+#hero button{
+   width: 10rem;
+   padding: 7px;
+   height: 3.5rem;
+   border-radius: 30px;
+   border: none;
+   font-size: 1rem;
+   font-weight: bold;
+}
+.cta{
+   display: flex;
+   gap: 15px;
+   flex-wrap: wrap;
+   animation: fadein 1s ease forwards;
+}
+.cta #order{
+   background-color:#f5f5dc ;
+   color: #6f4e37;
+   font-size: 1.2rem;
+   transition: .5s ease;
+}
+.cta #reserve{
+   background-color: transparent;
+   border: 2px solid #f5f5dc;
+   color: #f5f5dc;
+   transition: .5s ease;
+}
+.cta #order:hover{
+   background-color: transparent;
+   border: 2px solid #f5f5dc;
+   color: #f5f5dc;
+}
+.cta #reserve:hover{
+   background-color:#f5f5dc ;
+   color: #6f4e37;
+}
+@keyframes fadedown {
+   from{
+      opacity: 0;
+      transform: translateY(-100px);
+   }
+   to{
+      opacity: 1;
+      transform: translateY(0px);
+   }
+}
+@keyframes fadein {
+   from{
+      opacity: 0;
+      transform: translateY(100px);
+   }
+   to{
+      opacity: 1;
+      transform: translateY(0px);
+   }
+}
+@keyframes slideleft {
+   from{
+      opacity: 0;
+      transform: translateX(-100px);
+   }
+   to{
+      opacity: 1;
+      transform: translateX(0px);
+   }
+}
+@keyframes slideright {
+   from{
+      opacity: 0;
+      transform: translateX(100px);
+   }
+   to{
+      opacity: 1;
+      transform: translateX(0px);
+   }
+}
+@media (max-width:768px) {
+   #hamburger{
+      display: block;
+      color: whitesmoke;
+      font-size: 2rem;
+      padding-right: 2rem;
+      transition: .4s ease;
+   }
+   #hamburger:hover{
+      transform: scale(1.2);
+   }
+   nav {
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      transition: .3s ease-in-out;
+      position: absolute;
+      top: 3.5rem;
+      right: 0;
+      background: linear-gradient(120deg, rgb(114, 53, 10) ,rgb(83, 38, 5));
+      width:100%;
+      transform: translateY(50px);
+      opacity: 0;
+      text-align: center;
+      margin: 0;
+   }
+   nav a{
+      padding: 5px;
+   }
+   nav.show{
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+   }
+   #hero{
+      display: flex;
+      height: 60vh;
+      justify-content: none;
+      padding-top: 8rem;
+      padding-left: 2rem;
+   }
+}
+#promotions{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   backdrop-filter: blur(100px);
+   background-color: rgba(255, 255, 255, 0.3);
+   padding: 4rem;
+   padding-top: 1rem;
+   margin: 2rem;
+   border-radius: 10px;
+}
+.dishesbox{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.3rem;
+   justify-content: center;
+   align-items: center;
+}
+.dishbox img{
+   width: 13rem;
+   height: 13rem;
+   border: 4px solid beige;
+}
+.dishbox{
+   transition: .3s ease;
+}
+.dishbox:hover{
+   transform: scale(1.1);
+}
+#promotions hr{
+   border: none;
+   width: 20%;
+   background: linear-gradient(to right,chocolate, brown, chocolate);
+   height: 2px;
+   margin: 0;
+   padding: 0;
+}
+#promotions h2{
+   font-family: sans-serif;
+   font-size: 3rem;
+   margin: 0;
+   margin-bottom: 1.5rem;
+   padding-top: 2rem;
+   text-align: center;
+}
+#promotions p{
+   font-size: 1.3rem;
+   font-family: sans-serif;
+   font-weight: 400;
+   text-align: center;
+}
+.specials{
+   background: linear-gradient(120deg, rgb(139, 63, 8),rgb(121, 53, 5), rgb(114, 53, 10));
+   color: whitesmoke;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem;
+   margin: 2rem;
+   border-radius: 10px;
+}
+.specialofferbox{
+   display: flex;
+   background-color: rgba(245, 245, 245, 0.226);
+   border-radius: 10px;
+   justify-content: center;
+   align-items: center;
+   transition: .2s ease;
+   padding: .8rem;
+   gap: 3px;
+   flex-wrap: wrap;
+}
+.specialofferbox:hover{
+   transform: scale(1.1);
+   border: 2px solid whitesmoke;
+}
+.specialofferbox .content{
+   display: flex;
+   flex-direction: column;
+   gap: 1.2rem;
+}
+.specialbox{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+}
+.specialofferbox .icon{
+   font-size: 2.5rem;
+}
+.specials h2{
+   font-size: 3rem;
+   font-family: serif;
+   padding-bottom: 0;
+   margin-bottom: 0;
+   color: whitesmoke;
+   text-align: center;
+}
+.specials hr{
+   border: none;
+   background-color: whitesmoke;
+   height: 3px;
+   width: 20%;
+   margin-bottom: 3rem;
+}
+.specialofferbox .content h3{
+   font-size: 1.2rem;
+   font-family: sans-serif;
+   margin: 0;
+}
+.specialofferbox .content p{
+   font: .9rem sans-serif;
+   margin: 0;
+}
+#reservation{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(245, 245, 245, 0.3);
+   margin: 2rem;
+   border-radius: 10px;
+   animation:  fadein  1s forwards;
+}
+#reservation h2{
+   font-size: 2rem;
+   font-family: sans-serif;
+   text-align: center;
+   color: rgb(65, 28, 2);
+}
+#reservation form{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   justify-content: center;
+   align-items: flex-start;
+   border-radius: 10px;
+}
+#reservation form label{
+   font-size: 1.2rem;
+   font-weight: 600;
+   color:#6f4e37;
+}
+#reservation form div{
+   padding: 05px;
+}
+#reservation form input{
+   border: 1px solid #6f4e37;
+   background-color: transparent;
+   padding: 3px;
+   font-size: 1rem;
+   font-family: sans-serif;
+   color: #6f4e37;
+}
+#reservation form #num{
+   width: 4rem;
+}
+#reservation form button{
+   border: none;
+   padding: 10px;
+   color: whitesmoke;
+   background-color: rgb(121, 53, 5);
+   font-weight: bold;
+   font-size: 1rem;
+   border-radius: 30px;
+   transition: .4s ease;
+}
+#reservation form button:hover{
+   transform: scale(1.1);
+}
+footer{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   align-items: center;
+   padding: 2rem;
+   background-color: rgb(48, 20, 1);
+   color: whitesmoke;
+   font-size: 1rem;
+}
+footer.content h4 {
+   margin: 0;
+   padding: 0;
+}
+footer .brief h4{
+   margin: 0;
+}
+footer .content p i{
+   margin: 0;
+   padding: 0;
+}
+footer .socials h4{
+   margin: 0;
+   padding-top: 5px;
+}
+footer .socials div{
+   margin: 0;
+}
+footer .content, .socials{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+footer .content a{
+   color: whitesmoke;
+}
+@media (max-width:768px) {
+   footer{
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+   }
+}
+.footer{
+   display: flex;
+   justify-content: center;
+   padding: 1rem;
+   gap: .5rem;
+   font-size: 1.5rem;
+   font-weight: 400;
+}
+.tabs{
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   flex-wrap: wrap;
+}
+.tab{
+   padding: 0.6rem 1.5rem;
+   border: none;
+   border-radius: 30px;
+   cursor: pointer;
+   background: #eee;
+   margin-bottom: 1rem;
+   margin-top: 1rem;
+   font-size: 1rem;
+   font-family: monospace;
+   font-weight: bold;
+   transition: .4s ease;
+}
+.tab.active{
+   background: rgb(114, 53, 10);
+   color: whitesmoke;
+   font-size: 1rem;
+   font-family: monospace;
+   font-weight: bold;
+}
+.tab:hover{
+   transform: scale(1.25);
+}
+.menugroup{
+   display: none;
+   position: relative;
+}
+.menugroup.active{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 3rem;
+   animation: fadein 1s forwards;
+}
+.menucontent{
+   padding: 2rem;
+}
+.menucard{
+   width: 200px;
+   background: whitesmoke;
+   border: 15px;
+   overflow: hidden;
+   border-radius: 10px;
+   color: rgb(65, 28, 2);
+}
+.menucard img{
+   width: 100%;
+   height: 150px;
+   object-fit: cover;
+   transition: .3s ease;
+}
+.menucard img:hover{
+   transform: scale(1.1);
+}
+.menu .box1{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 1.3rem;
+   margin: 2rem;
+   padding: 1rem;
+   border-radius: 10px;
+   animation: fadein 1s ease forwards;
+   background: linear-gradient(120deg, rgba(107, 51, 11, 0.4), rgba(210, 105, 30, 0.4));
+}
+.menu .box1 img{
+   height: 18rem;
+   width: 18rem;
+   border-radius: 10px;
+   border: 3px solid rgb(121, 56, 10);
+}
+.menu .box1 h2{
+   text-align: center;
+   font-size: 2.5rem;
+   font-family: monospace;
+   color: whitesmoke;
+}
+.menu .menusection{
+   margin: 2rem;
+   border-radius: 10px;
+   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   animation: fadein 1s ease forwards;
+   background: linear-gradient(120deg, rgba(107, 51, 11, 0.4), rgba(210, 105, 30, 0.4));
+}
+.menusection h4{
+   text-align: center;
+   font-size: 2.2rem;
+   color: whitesmoke;
+   margin: 0;
+   padding-top: 1rem;
+   margin-bottom: 1rem;
+}
+.menucard h4{
+   color: black;
+   font-size: 1rem;
+   margin: 0;
+   padding: .5rem;
+   text-align: start;
+}
+.menucard p{
+   font-size: 1rem;
+   margin: 0;
+   padding-left: .8rem;
+   font-weight: bold;
+   padding: .4rem;
+   padding-top: 0;
+}
+.menu .menusection hr{
+   border: none;
+   height: 3px;
+   width: 30%;
+   margin: 0;
+   padding: 0;
+   margin-bottom: 1rem;
+   border-radius: 10px;
+   background: linear-gradient(120deg, rgba(107, 51, 11), rgba(210, 105, 30));
+}
+.about1{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 2rem;
+   background-color: rgb(80, 35, 5);
+   padding: 1rem;
+   flex-wrap: wrap;
+   border-radius: 10px;
+}
+.about1 img{
+   width:20rem;
+   height: 20rem;
+   animation: slideleft 1s forwards;
+}
+.about1 h2{
+   animation: slideright 1s forwards;
+   font-size: 3rem;
+   text-align: center;
+   color: whitesmoke;
+   font-family: monospace;
+}
+.history h2{
+   font-size: 5rem;
+   animation: slideleft 1s ease forwards;
+}
+.history{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(245, 245, 245, 0.404);
+   margin: 2rem;
+   flex-wrap: wrap;
+   color: rgb(82, 36, 4);
+   border-radius: 10px;
+}
+.history p{
+   width: 50rem;
+   padding: 0 1rem;
+   font-size: 1.3rem;
+   font-family: Arial, Helvetica, sans-serif;
+   animation: slideright 1s ease forwards;
+}
+.goals{
+   display: flex;
+   background: rgb(80, 35, 5);
+   margin: 2rem;
+   padding: 1rem;
+   gap: 1rem;
+   justify-content: center;
+   border-radius: 10px;
+   color: whitesmoke;
+   flex-wrap: wrap;
+}
+.goalsbox{
+   background-color: rgba(245, 245, 245, 0.2);
+   padding: 1rem;
+   width:22rem;
+   height: 15rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   border-radius: 10px;
+   flex-wrap: wrap;
+}
+.goalsicon{
+   font-size: 3rem;
+}
+.values h3{
+   margin: 0;
+   font-size: 1.7rem;
+   font-weight: bold;
+}
+.values p, .values ul li{
+   font-size: 1rem;
+   font-weight: bold;
+   list-style: square;
+}
+.wrapper{
+   display: flex;
+   flex-direction: column;
+}
+.con{
+   display: flex;
+   gap: 2rem;
+   flex-wrap: wrap;
+   flex-direction: column;
+   margin: 2rem;
+   justify-content: center;
+   border-radius: 10px;
+   color: whitesmoke;
+   padding: 1rem;
+   background: linear-gradient(120deg, rgba(107, 51, 11, 0.4), rgba(210, 105, 30, 0.4));
+}
+.conbox{
+   background: rgba(80, 35, 5, 0.6);
+   padding: 1rem;
+   margin: 1rem 2rem .5rem 2rem;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   border-radius: 10px;
+}
+.conicon{
+   font-size: 3rem;
+}
+.conbox h4{
+   font-size: 1.5rem;
+   margin: 0;
+}
+.conbox p{
+   font-size: 1.2rem;
+   font-weight: bold;
+}
+.wrapper form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   padding: 2rem;
+   margin: 2rem;
+   border-radius: 10px;
+   background: linear-gradient(120deg, rgba(107, 51, 11, 0.4), rgba(210, 105, 30, 0.4));
+}
+.wrapper form input, textarea{
+   border: none;
+   background-color: rgba(80, 35, 5, 0.8);
+   width: 15rem;
+   padding: 1rem;
+   font-size: 1rem;
+   color: whitesmoke;
+   border-radius: 10px;
+}
+.wrapper form textarea{
+   height: 5rem;
+}
+.wrapper form input::placeholder, textarea::placeholder{
+   color: whitesmoke;
+   font-family: monospace;
+}
+.wrapper form button{
+   border: none;
+   padding: 1rem .5rem;
+   width: 10rem;
+   background: rgb(121, 53, 5);
+   color: whitesmoke;
+   border-radius:10px ;
+   font-size: 1rem;
+}
